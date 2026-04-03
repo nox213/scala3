@@ -783,7 +783,7 @@ class Typer(@constructorOnly nestingLevel: Int = 0) extends Namer
        && !tree1.isType
        && !pt.isInstanceOf[ApplyingProto]
        && !tree1.tpe.match
-        case tp: NamedType => tp.denot.hasAltWith(_.symbol.isStableMember && tp.prefix.isStable || tp.info.isStable)
+        case tp: NamedType => tp.denot.hasAltWith(_.symbol.isStableMember && tp.prefix.isStable)
         case tp            => tp.isStable
        && !isWildcardArg(tree1)
     then
